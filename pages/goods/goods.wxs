@@ -1,0 +1,5 @@
+var testWxs = function (param) {
+  return 'wxs' + param
+};
+
+module.exports.test = testWxs;

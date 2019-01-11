@@ -1,2 +1,8 @@
 <!--pages/goods/goods.wxml-->
-<text>pages/goods/goods.wxml</text>
+<wxs module="tools" src="goods.wxs" />
+<text>{{tools.test('-这是测试WXS的示例')}}</text>
+<wxs module="test">
+  var msg = '这是测试内嵌的 wxs 模块';
+  module.exports.message = msg;
+</wxs>
+<view>{{test.message}}</view>
