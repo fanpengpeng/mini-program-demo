@@ -1,2 +1,33 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class='container'>
+  <view class='userinfo'>
+    <image class="userinfo-avatar" src='{{userInfo.avatarUrl}}' background-size='cover'></image>
+    <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
+  </view>
+  <view class='info-list'>
+    <view class='weui-cells'>
+      <view class='weui-cell weui-cell_access' hover-class='weui-cell_active' wx:for='{{ items }}' wx:key='{{item.text}}' bindtap="navigateTo" data-index='{{index}}' data-path='{{item.path}}'>
+        <view class='weui-cell__hd'>
+          <image class='cell-item-icon' src='{{ item.icon }}'></image>
+        </view>
+        <view class='weui-cell__bd'>{{ item.text }}</view>
+        <view class='weui-cell__ft weui-cell__ft_in-access'>
+          <text wx:if='{{ index === 2 }}'>{{ item.path }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells">
+      <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for='{{ settings }}' wx:for-item='setting' wx:key='setting.text' bindtap="bindtap">
+        <view class="weui-cell__hd">
+          <image class='cell-item-icon' src='{{ setting.icon }}'></image>
+        </view>
+        <view class='weui-cell__bd'>{{ setting.text }}</view>
+        <view class='weui-cell__ft weui-cell__ft_in-access'>
+          <text wx:if='{{ index === 0 }}'>{{ setting.path }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="logout" bindtap="logout">登出账号</view>
+  <custom-dialog id="dialog" title="{{title}}" content="{{content}}" catchcancelEvent="cancel" catchconfirmEvent="confirm"></custom-dialog>
+</view>

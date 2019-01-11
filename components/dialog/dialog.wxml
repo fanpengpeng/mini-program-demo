@@ -1,0 +1,22 @@
+<!--components/dialog.wxml-->
+<block wx:if="{{showModal}}">
+  <view class="modal-mask" catchtouchmove="preventTouchMove"></view>
+  <view class="modal-dialog" catchtouchmove="preventTouchMove">
+    <view class='m-title'>
+      {{title}}
+    </view>
+    <view class="m-info">
+      <text>
+        {{content}}    
+      </text>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-footer btn-l-footer" bindtap="_onCancel">
+        <text>取消</text>
+      </view>
+      <view class="btn-footer btn-r-footer" bindtap="_onConfirm">
+        <text>确认</text>
+      </view>
+    </view>
+  </view>
+</block>

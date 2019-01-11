@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "custom-dialog": "../../components/dialog/dialog"
+  },
+  "navigationBarTitleText": "用户中心",
+  "navigationBarTextStyle": "light"
 }
